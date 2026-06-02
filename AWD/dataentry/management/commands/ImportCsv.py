@@ -3,6 +3,7 @@ import csv
 from dataentry.models import Students
 class Command(BaseCommand):
     def add_arguments(self,parser):
+        help="This will import CSV file data and insert it in the Student Table"
         parser.add_argument('file_path',type=str,help="CSV file path for importing data")
     
     def handle(self,*args,**kwargs):
