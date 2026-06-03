@@ -13,8 +13,10 @@ class Command(BaseCommand):
         modelName=kwargs['modelname'].capitalize()
         model=None
         for app_config in apps.get_app_configs():
+            print(app_config)
             try:
                 model=apps.get_model(app_config.label,modelName)
+                print(apps.get_model(app_config.label,modelName))
                 break
             except LookupError:
                 continue
